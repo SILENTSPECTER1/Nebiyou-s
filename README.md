@@ -1,109 +1,199 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Simple Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Basic styles for readability and appeal */
-        body {
-            font-family: 'Inter', sans-serif; /* A clean, modern font */
-        }
-        .section-title {
-            @apply text-2xl font-bold text-center mb-6 text-gray-700; /* Simplified title */
-        }
-        .card {
-            @apply bg-white rounded-lg shadow-md overflow-hidden; /* Simplified card */
-        }
-        .card-content {
-            @apply p-5; /* Slightly reduced padding */
-        }
-        /* Smooth scroll behavior */
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Your Name | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --main-color: #2c3e50;
+      --accent-color: #3498db;
+      --bg-color: #ecf0f1;
+      --text-color: #222;
+      --card-bg: #fff;
+      --shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg-color);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: var(--text-color);
+    }
+    header {
+      background: var(--main-color);
+      color: #fff;
+      padding: 2rem 0 1rem 0;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin: 0.5rem 0 1.5rem 0;
+    }
+    nav {
+      margin-top: 1rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1.2rem;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: var(--accent-color);
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    section {
+      margin-bottom: 2.5rem;
+    }
+    h2 {
+      color: var(--main-color);
+      margin-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent-color);
+      display: inline-block;
+      padding-bottom: 0.25rem;
+    }
+    .about {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+    .projects {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .project-card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      padding: 1.2rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 8px 24px rgba(44,62,80,0.13);
+    }
+    .project-card h3 {
+      margin-top: 0;
+      color: var(--accent-color);
+    }
+    .project-card p {
+      font-size: 1rem;
+      color: #444;
+    }
+    .project-card a {
+      display: inline-block;
+      margin-top: 0.8rem;
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .project-card a:hover {
+      text-decoration: underline;
+    }
+    .contact {
+      background: var(--card-bg);
+      padding: 1.2rem;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .social-links a {
+      display: inline-block;
+      margin: 0 0.7rem;
+      color: var(--main-color);
+      font-size: 1.5rem;
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+    .social-links a:hover {
+      color: var(--accent-color);
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .projects {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <!-- Font Awesome for icons (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-gray-50 text-gray-600">
-
-    <nav class="bg-white shadow-sm sticky w-full z-10 top-0 rounded-b-md">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="#" class="text-xl font-semibold text-blue-600">Your Name</a>
-            <div class="space-x-3">
-                <a href="#about" class="text-gray-500 hover:text-blue-600 px-2 py-1 rounded-md text-sm">About</a>
-                <a href="#projects" class="text-gray-500 hover:text-blue-600 px-2 py-1 rounded-md text-sm">Projects</a>
-                <a href="#contact" class="text-gray-500 hover:text-blue-600 px-2 py-1 rounded-md text-sm">Contact</a>
-            </div>
-        </div>
+<body>
+  <header>
+    <h1>Your Name</h1>
+    <p>Web Developer • Designer • Programmer</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
     </nav>
-
-    <header class="bg-blue-500 text-white pt-24 pb-12 md:pt-28 md:pb-16 rounded-b-lg shadow-md">
-        <div class="container mx-auto px-4 text-center">
-            <img src="https://placehold.co/120x120/FFFFFF/3B82F6?text=Me" alt="Your Name" class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-full object-cover border-2 border-white shadow-lg mb-4">
-            <h1 class="text-3xl md:text-4xl font-bold mb-1">Your Name</h1>
-            <p class="text-lg md:text-xl text-blue-100">Your Title (e.g., Developer, Designer)</p>
-        </div>
-    </header>
-
-    <section id="about" class="py-12 md:py-16 bg-white rounded-lg shadow my-6 mx-3 md:mx-auto max-w-3xl">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title">About Me</h2>
-            <p class="text-center text-md leading-relaxed max-w-xl mx-auto">
-                Hi, I'm [Your Name]. I'm a [Your Profession/Title] passionate about [Your Key Interest].
-                I enjoy building [Type of work/projects]. This is a brief space to introduce yourself.
-            </p>
-        </div>
+  </header>
+  
+  <div class="container">
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about">
+        <p>
+          Hi! I'm <strong>Your Name</strong>, a passionate web developer with experience in building modern, responsive websites and applications.<br>
+          I love working with <b>HTML</b>, <b>CSS</b>, <b>JavaScript</b>, and frameworks like <b>React</b>.<br>
+          I'm always eager to learn new technologies and take on exciting challenges!
+        </p>
+      </div>
     </section>
 
-    <section id="projects" class="py-12 md:py-16 bg-gray-50 rounded-lg shadow my-6 mx-3 md:mx-auto max-w-4xl">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title">Key Projects</h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="card">
-                    <img src="https://placehold.co/500x300/E0E7FF/3B82F6?text=Project+A" alt="Project 1" class="w-full h-40 object-cover">
-                    <div class="card-content">
-                        <h3 class="text-lg font-semibold mb-1 text-gray-700">Project Title A</h3>
-                        <p class="text-sm text-gray-500 mb-3">Short description of the project and your role.</p>
-                        <a href="#" class="text-blue-500 hover:underline text-sm font-medium">Learn More</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://placehold.co/500x300/DBEAFE/3B82F6?text=Project+B" alt="Project 2" class="w-full h-40 object-cover">
-                    <div class="card-content">
-                        <h3 class="text-lg font-semibold mb-1 text-gray-700">Project Title B</h3>
-                        <p class="text-sm text-gray-500 mb-3">Another project, highlighting a key skill or achievement.</p>
-                        <a href="#" class="text-blue-500 hover:underline text-sm font-medium">Learn More</a>
-                    </div>
-                </div>
-            </div>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="project-card">
+          <h3>Portfolio Website</h3>
+          <p>A personal website to showcase my projects, skills, and contact info. Built with HTML, CSS, and a sprinkle of JavaScript for interactivity.</p>
+          <a href="#" target="_blank">View Project</a>
         </div>
+        <div class="project-card">
+          <h3>ToDo App</h3>
+          <p>A simple and effective ToDo list application allowing users to keep track of tasks. Built using React and local storage.</p>
+          <a href="#" target="_blank">View Project</a>
+        </div>
+        <div class="project-card">
+          <h3>Weather Dashboard</h3>
+          <p>Displays real-time weather info for any city using a public API. Developed with JavaScript and OpenWeatherMap API.</p>
+          <a href="#" target="_blank">View Project</a>
+        </div>
+        <!-- Add more projects as needed -->
+      </div>
     </section>
 
-    <section id="contact" class="py-12 md:py-16 bg-blue-500 text-white rounded-t-lg shadow-md">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-2xl font-bold mb-4">Contact Me</h2>
-            <p class="text-md mb-6 text-blue-100">Interested in working together or have a question?</p>
-            <a href="mailto:your.email@example.com" class="bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg hover:bg-blue-50 transition-colors shadow-sm inline-block">
-                your.email@example.com
-            </a>
-            <div class="flex justify-center space-x-5 mt-8">
-                <a href="#" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-200 text-2xl transition-colors" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-200 text-2xl transition-colors" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                </div>
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact">
+        <p>
+          Want to work together or have a question?<br>
+          <b>Email:</b> <a href="mailto:your.email@example.com">your.email@example.com</a>
+        </p>
+        <div class="social-links">
+          <a href="https://github.com/yourusername" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/yourlinkedin" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://twitter.com/yourtwitter" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
         </div>
+      </div>
     </section>
-
-    <footer class="bg-gray-700 text-gray-300 text-center py-4 rounded-t-md">
-        <p class="text-sm">&copy; <span id="currentYear"></span> Your Name. All rights reserved.</p>
-    </footer>
-
-    <script>
-        // JavaScript to set the current year in the footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
-
+  </div>
 </body>
 </html>
 
